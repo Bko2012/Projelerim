@@ -32,7 +32,7 @@ async def mem1(ctx):
     await ctx.send(file=picture)
 
 @bot.command()
-async def mem1(ctx):
+async def mem2(ctx):
     with open('images\mem2.png','rb') as f:
         # Dönüştürülen Discord kütüphane dosyasını bu değişkende saklayalım!
         picture = discord.File(f)
