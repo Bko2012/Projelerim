@@ -1,0 +1,59 @@
+import discord
+import random
+import time
+from discord.ext import commands
+
+intents = discord.Intents.default()
+
+intents.message_content = True
+
+bot = commands.Bot(command_prefix='$', intents=intents)
+
+
+@bot.event
+async def on_ready():
+    print(f'{bot.user} olarak giriş yaptık')
+
+@bot.command()
+async def Sa(ctx):
+    await ctx.send(f'As ben çevre dostu bir botum')
+    time.sleep(1)
+    await ctx.send(f'Haydi biraz konuşalım!')
+
+
+@bot.command()
+async def sohbet(ctx):
+    await ctx.send(f'Ne hakkında konuşalım')
+
+@bot.command()
+async def cevre(ctx):
+    await ctx.send(f'Çevre ve kirlilik hakkında bir şey yapmak istiyorsanız oneri komutunu kullanın!')
+
+@bot.command()
+async def oneri(ctx):
+    await ctx.send(f'Ekolojik farkındalığın yaratılması ve duyarlılığın arttırılması')
+    time.sleep(1)
+    await ctx.send(f'Çöplerimizi kesinlikle doğaya atmamalı, kağıt,cam,plastik gibi atıkların geri dönüşümünü sağlamalıyız.')
+    time.sleep(1)
+    await ctx.send(f'Ev ve fabrika bacalarından çıkan gazlar hava kirliliğine yol açtığı için filtre kullanmalıyız.')
+    time.sleep(1)
+    await ctx.send(f'Yeşil alanları arttırarak orman tahribatını önlemeliyiz.')
+    time.sleep(1)
+    await ctx.send(f'Ozon tabakasına zararı olan herhangi bir üründen kaçınmalıyız')
+    time.sleep(1)
+    await ctx.send(f'Otomobil egzozlarının sebep olduğu etkiyi azaltmak için toplu taşıma araçlarının kullanmaya özen göstermeliyiz.')
+    time.sleep(1)
+    await ctx.send(f'Hayvan avlanması kontrol edilmeli, tür çeşitliliği korunmaya çalışılmalıdır.')
+    time.sleep(1)
+    await ctx.send(f'Enerjide yenilenebilir kaynaklar kullanılmalıdır.')
+
+@bot.command()
+async def resim(ctx):
+    with open(r'resimler\resim.png', 'rb') as f:
+        picture = discord.File(f)
+    await ctx.send(file=picture)
+    time.sleep(1)
+    await ctx.send(f'Daha güzel daha temiz bir dünya için çevremizi temiz tutalım')
+
+
+bot.run("")
