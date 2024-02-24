@@ -24,7 +24,7 @@ async def heh(ctx, count_heh = 5):
 
 
 @bot.command()
-async def mem(ctx):
+async def mem1(ctx):
     with open('images\mem1.png','rb') as f:
         # Dönüştürülen Discord kütüphane dosyasını bu değişkende saklayalım!
         picture = discord.File(f)
@@ -39,6 +39,12 @@ async def mem1(ctx):
     # Daha sonra bu dosyayı bir parametre olarak gönderebiliriz!
     await ctx.send(file=picture)
 
-
+@bot.command()
+async def mem3(ctx):
+    with open('images\mem3.png','rb') as f:
+        # Dönüştürülen Discord kütüphane dosyasını bu değişkende saklayalım!
+        picture = discord.File(f)
+    # Daha sonra bu dosyayı bir parametre olarak gönderebiliriz!
+    await ctx.send(file=picture)
               
 bot.run("")
