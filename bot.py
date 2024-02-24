@@ -32,4 +32,3 @@ async def roll(ctx, dice: str):
     
 
 bot.run("")
-  
